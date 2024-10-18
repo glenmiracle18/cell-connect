@@ -90,6 +90,7 @@ export function DataTable<TData, TValue>({
               variant="outline"
               className="ml-auto bg-[#e76f51] text-white"
             >
+
               Columns
             </Button>
           </DropdownMenuTrigger>
