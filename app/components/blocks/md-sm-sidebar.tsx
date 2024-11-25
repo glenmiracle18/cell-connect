@@ -1,12 +1,5 @@
 import { Link } from '@remix-run/react';
-import {
-    ArrowLeft,
-    Bell,
-    ChevronLeft,
-    ChevronRight,
-    Search,
-} from 'lucide-react';
-import { Button } from '../ui/button';
+import { Search } from 'lucide-react';
 import { Input } from '../ui/input';
 
 import { ProfileDropdown } from './profile-dropdown';

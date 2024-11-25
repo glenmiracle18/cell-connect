@@ -36,9 +36,6 @@ import {
 } from '@/components/theme-switcher';
 import { LanguageItem } from '../atoms/language-item';
 import { cn } from '@/lib/utils';
-import { Label } from '../ui/label';
-import { Input } from '../ui/input';
-import Sidebar from './sidebar';
 import MdtoSmSidebar from './md-sm-sidebar';
 
 interface LayoutHeaderProps {
