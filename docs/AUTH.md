@@ -19,7 +19,7 @@ sequenceDiagram
 ```
 
 ## Session Implementation
-
+.
 ```typescript
 // auth/session.server.ts
 import { createCookieSessionStorage } from '@remix-run/node';
