@@ -94,7 +94,7 @@ const LayoutHeader = ({
             </SheetTrigger>
             <SheetContent
               side="left"
-              className="rounded-r-3xl h-full w-[300px]"
+              className="rounded-r-3xl h-full w-[300px] px-1"
             >
               <MdtoSmSidebar
                 toggleSidebar={showSubmenu}
