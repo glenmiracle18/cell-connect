@@ -11,7 +11,8 @@
 7. [User Interface](#user-interface)
 8. [Analytics & Reporting](#analytics--reporting)
 9. [Technical Reference](#technical-reference)
-10. [Support](#support)
+10. [Cloud Architecture](#architecture)
+11. [Support](#support)
 
 ## Platform Overview
 
@@ -243,7 +244,7 @@ graph TD
 ```mermaid
 graph LR
     subgraph Frontend
-        N[Next.js] --> R[React]
+        N[Remix] --> R[React]
         R --> S[State/Tanstack]
         R --> C[Components]
         C --> P[Pages]
@@ -299,7 +300,7 @@ sequenceDiagram
 
 ### System Components
 
-##### 1. Frontend (Next.js)
+##### 1. Frontend (Remix.js)
 
 -   PWA capabilities
 -   Offline first
@@ -325,6 +326,47 @@ interface CacheStrategy {
     ttl: number;
     invalidation: 'time' | 'event';
 }
+```
+
+### Edge computing diagram
+```mermaid
+flowchart TD
+    subgraph Edge Functions
+        E1[Edge Location 1\nNorth America]
+        E2[Edge Location 2\nEurope]
+    end
+
+    subgraph Features
+        F1[Attendance Tracking]
+        F2[Event Calendar]
+        F3[Cell Group Management]
+        F4[Member Directory]
+    end
+
+    subgraph Central Database
+        DB[(Main Database)]
+        Cache[(Global Cache)]
+    end
+
+    Client1[Church A] --> E1
+    Client2[Church B] --> E2
+
+    E1 --> F1
+    E1 --> F2
+    E1 --> F3
+    E1 --> F4
+
+    E2 --> F1
+    E2 --> F2
+    E2 --> F3
+    E2 --> F4
+
+    F1 --> DB
+    F2 --> DB
+    F3 --> DB
+    F4 --> DB
+
+    DB <--> Cache
 ```
 
 ### Integration Points
