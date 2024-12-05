@@ -63,13 +63,18 @@ const Sidebar: FC<SidebarProps> = ({
                 </div>
                 <div className="flex-1">
                     {minimalSidebar ? (
-                        <div
+                        <button
+                            type="button"
                             className="relative items-center flex justify-center cursor-pointer"
                             onClick={toggleSidebar}
+                            onKeyDown={(e) => {
+                              if(e.key === 'Enter' || e.key === ' ') {
+                                toggleSidebar()
+                              }
+                            }}
                         >
                             <Search className="absolute left-4 ml-3 top-2.5 s-6 text-muted-foreground hover:text-black" />
-                            {/* TODO: automatically set focus to the search inpu field */}
-                        </div>
+                        </button>
                     ) : (
                         <form className="mx-4 my-4">
                             <div className="relative">
@@ -109,7 +114,7 @@ const Sidebar: FC<SidebarProps> = ({
                                                 }) => (
                                                     <CollapsibleChild
                                                         key={child.label}
-                                                        childLabel={child.label}
+                                                        childLabel={String(child.label)}
                                                         href={child.href}
                                                     />
                                                 )

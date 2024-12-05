@@ -78,9 +78,9 @@ const LayoutHeader = ({
         <header
             className={cn(
                 minimalSidebar
-                    ? `w-full lg:w-[calc(100%-150px)]`
-                    : `w-full lg:w-[calc(100%-350px)] `,
-                `lg:fixed bg-card border rounded-lg flex items-center justify-between p-4 lg:p-6 mx-auto`
+                    ? 'w-full lg:w-[calc(100%-150px)]'
+                    : 'w-full lg:w-[calc(100%-350px)] ',
+                'lg:fixed bg-card border rounded-lg flex items-center justify-between p-4 lg:p-6 mx-auto'
             )}
         >
             <div className="flex gap-x-2 items-center">

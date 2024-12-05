@@ -47,11 +47,11 @@ export default function MainLayout({
     <div
       className={cn(
         isTabletMode
-          ? `grid-cols-1`
+          ? 'grid-cols-1'
           : minimalSidebar
-          ? `md:grid-cols-[50px_1fr] lg:grid-cols-[120px_1fr]`
-          : `md:grid-cols-[220px_1fr] lg:grid-cols-[320px_1fr]`,
-        `grid min-h-screen w-full p-4`
+          ? 'md:grid-cols-[50px_1fr] lg:grid-cols-[120px_1fr]'
+          : 'md:grid-cols-[220px_1fr] lg:grid-cols-[320px_1fr]',
+        'grid min-h-screen w-full p-4'
       )}
     >
       {isTabletMode ? null : (

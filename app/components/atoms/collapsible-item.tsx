@@ -42,10 +42,9 @@ export const CollapsibleItem = ({
         <ChevronsUpDown className="size-4" />
       </CollapsibleTrigger>
       <div className="flex flex-col ml-6 my-2 gap-4">
-        {children &&
-          children.map((child, index) => (
-            <CollapsibleContent key={index}>{child}</CollapsibleContent>
-          ))}
+        {children?.map((child, index) => (
+          <CollapsibleContent key={`${label}-popup${child?.toString}`}>{child}</CollapsibleContent>
+        ))}
       </div>
     </Collapsible>
   ) : (
@@ -63,14 +62,13 @@ export const CollapsibleItem = ({
         </Tooltip>
       </TooltipProvider>
       <PopoverContent className="w-auto">
-        {children &&
-          children.map((child, index) => (
-            <div key={index} className="flex flex-col gap-2 items-start">
-              <div className={buttonVariants({ variant: "ghost" })}>
-                {child}
-              </div>
+        {children?.map((child, index) => (
+          <div key={`${label}-popup${child?.toString}`} className="flex flex-col gap-2 items-start">
+            <div className={buttonVariants({ variant: "ghost" })}>
+              {child}
             </div>
-          ))}
+          </div>
+        ))}
       </PopoverContent>
     </Popover>
   );
