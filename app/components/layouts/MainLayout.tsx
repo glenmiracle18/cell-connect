@@ -1,7 +1,8 @@
-import Sidebar from '../blocks/sidebar';
 import LayoutHeader from '../blocks/layout-header';
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
+import Sidebar from '../blocks/sidebar';
+
 
 interface MainLayoutProps {
     title?: string;
@@ -33,11 +34,11 @@ export default function MainLayout({
         <div
             className={cn(
                 windowWidth < tabletBreakpoint
-                    ? `grid-cols-1`
+                    ? 'grid-cols-1'
                     : minimalSidebar
-                    ? `md:grid-cols-[50px_1fr] lg:grid-cols-[120px_1fr]`
-                    : `md:grid-cols-[220px_1fr] lg:grid-cols-[320px_1fr]`,
-                `grid min-h-screen w-full p-4`
+                    ? 'md:grid-cols-[50px_1fr] lg:grid-cols-[120px_1fr]'
+                    : 'md:grid-cols-[220px_1fr] lg:grid-cols-[320px_1fr]',
+                'grid min-h-screen w-full p-4'
             )}
         >
             {windowWidth < tabletBreakpoint ? null : (
